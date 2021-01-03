@@ -1,32 +1,32 @@
-<div class="container p-4 bg-warning text-center">
+<div class="container p-4 text-center">
 
     <h2>Inviertiendo pesos en un plazo fijo</h2>
 
     <div class="row">
 
         <div class="col-md-3 text-center">
-            <input type="number">
+            <input type="number" [(ngModel)]="inversionUsd" name="inversion-usd">
             <div class="row">
                 <div class="col-12 text-secondary text-center">Inversión USD</div>
             </div>
         </div>
 
         <div class="col-md-3 text-center">
-            <input type="number">
+            <input type="number" [(ngModel)]="inversionArs" name="inversion-ars">
             <div class="row">
                 <div class="col-12 text-secondary text-center">Inversión ARS</div>
             </div>
         </div>
 
         <div class="col-md-3 text-center">
-            <input type="number">
+            <input type="number" [(ngModel)]="tasaArs" name="tasa-ars">
             <div class="row">
                 <div class="col-12 text-secondary text-center">Taza de interés ARS</div>
             </div>
         </div>
 
         <div class="col-md-3 text-center">
-            <input type="number">
+            <input type="number" [(ngModel)]="tasaUsd" name="tasa-usd">
             <div class="row">
                 <div class="col-12 text-secondary text-center">Tasa de interés USD</div>
             </div>
