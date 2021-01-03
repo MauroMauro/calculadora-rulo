@@ -6,6 +6,8 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { PanelRuloComponent } from './componentes/panel-rulo/panel-rulo.component';
 import { CotizacionesComponent } from './componentes/cotizaciones/cotizaciones.component';
 import { PanelPfComponent } from './componentes/panel-pf/panel-pf.component';
+//rutas
+import { AppRoutingModule } from 'src/app/my-route.routing';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { PanelPfComponent } from './componentes/panel-pf/panel-pf.component';
     PanelPfComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
