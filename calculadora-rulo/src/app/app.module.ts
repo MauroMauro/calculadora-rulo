@@ -6,6 +6,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { PanelRuloComponent } from './componentes/panel-rulo/panel-rulo.component';
 import { CotizacionesComponent } from './componentes/cotizaciones/cotizaciones.component';
 import { PanelPfComponent } from './componentes/panel-pf/panel-pf.component';
+import { FormsModule } from '@angular/forms';
 //rutas
 import { AppRoutingModule } from 'src/app/my-route.routing';
 
@@ -19,7 +20,8 @@ import { AppRoutingModule } from 'src/app/my-route.routing';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
