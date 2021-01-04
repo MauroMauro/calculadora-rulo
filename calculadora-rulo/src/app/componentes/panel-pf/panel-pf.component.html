@@ -4,33 +4,29 @@
 
     <div class="row">
 
-        <div class="col-md-3 text-center">
-            <input type="number" [(ngModel)]='inversionUsd' >
-            <div class="row">
-                <div class="col-12 text-secondary text-center">Inversión USD</div>
-            </div>
-        </div>
+        
 
-        <div class="col-md-3 text-center">
+        <div class="col-md-4 text-center">
             <input type="number" [(ngModel)]="inversionArs">
             <div class="row">
                 <div class="col-12 text-secondary text-center">Inversión ARS</div>
             </div>
         </div>
 
-        <div class="col-md-3 text-center">
+        <div class="col-md-4 text-center">
             <input type="number" [(ngModel)]="tasaArs">
             <div class="row">
                 <div class="col-12 text-secondary text-center">Taza de interés anual ARS</div>
             </div>
         </div>
 
-        <div class="col-md-3 text-center">
-            <input type="number" [(ngModel)]="tasaUsd">
+        <div class="col-md-4 text-center">
             <div class="row">
-                <div class="col-12 text-secondary text-center">Tasa de interés anual USD</div>
+                <div class="col-12 text-secondary text-center">El plazo por defecto será de 30 días</div>
             </div>
         </div>
+
+       
 
     </div>
 
@@ -42,26 +38,19 @@
                         Ganancia mensual en ARS con PF en ARS
                     </div>
                     <div class="card-body">
-                        {{((inversionArs*(tasaArs/12))/100).toFixed(2)}} ARS
+                        {{
+                            ((inversionArs*(tasaArs/12))/100).toFixed(2)
+                        }} ARS
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 p-4">
-                <div class="card text-center">
-                    <div class="card-header bg-principal">
-                        Ganancia mensual en ARS con PF USD
-                    </div>
-                    <div class="card-body">
-                        {{(((inversionUsd*(tasaUsd/12))/100)* cotizacionUsd).toFixed(2)}} ARS
-                    </div>
-                </div>
-            </div>
+            
 
             <div class="col-md-4 p-4">
                 <div class="card text-center">
                     <div class="card-header bg-principal">
-                        Total ganancia con Dollar Loop
+                        Comparación ganancia con Dollar Loop invirtiendo el mismo capital
                     </div>
                     <div class="card-body">
                         500 ARS

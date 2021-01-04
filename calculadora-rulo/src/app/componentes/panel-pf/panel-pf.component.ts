@@ -7,22 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelPfComponent implements OnInit {
 
-  inversionUsd: number = 10;
-  inversionArs: number = 10;
-  tasaUsd: number = 10;
-  tasaArs: number = 10;
-  cotizacionUsd: number = 160;
+ 
+  inversionArs: number = 1000;
+  plazo: number = 30;
+  tasaArs: number = 30;
 
-  gananciaPFArs: number = ((this.inversionArs*(this.tasaArs/12))/100).toFixed(2);
 
   constructor() { }
 
   ngOnInit(): void {
 
-  }
-
-  ganancia(inversion:number, tasa:number) {
-    return ((inversion*(tasa/12))/100).toFixed(2);
   }
 
   mensaje(){
