@@ -12,6 +12,14 @@ export class PanelPfComponent implements OnInit {
   plazo: number = 30;
   tasaArs: number = 30;
 
+  cotizacionOficial: number = 80;
+  impuestos: number = 65;
+  cotizacion: number = this.cotizacionOficial + ((this.cotizacionOficial * this.impuestos)/100);
+  cotizacionBlue: number = 160;
+
+  //la "diferenciaBlueSobreOficial" refleja el porcentaje de ventaja del Blue sobre la "cotizacion"
+  diferenciaBlueSobreOficial:number = ((this.cotizacionBlue - this.cotizacion) * 100)/ this.cotizacionBlue;
+
 
   constructor() { }
 

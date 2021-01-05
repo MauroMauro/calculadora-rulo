@@ -7,7 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelRuloComponent implements OnInit {
 
+  cotizacionOficial: number = 80;
+  inversionUsd: number = 200;
+  inversionArs: number = this.inversionUsd * this.cotizacionOficial;
+  impuestos: number = 65;
+  cotizacion: number = this.cotizacionOficial + ((this.cotizacionOficial * this.impuestos)/100);
+  cotizacionBlue: number = 160;
+
+  //la "diferenciaBlueSobreOficial" refleja el porcentaje de ventaja del Blue sobre la "cotizacion"
+  diferenciaBlueSobreOficial:number = ((this.cotizacionBlue - this.cotizacion) * 100)/ this.cotizacionBlue;
+
   constructor() { }
+
+
 
   ngOnInit(): void {
   }
