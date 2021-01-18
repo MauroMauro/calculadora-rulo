@@ -4,7 +4,7 @@
 
 
     <div class="row">
-
+ 
         
 
         <div class="col-md-4 text-center">
@@ -34,8 +34,10 @@
 
     <div class="row">
 
-        <div class="col-md-4 text-center">
-            <div class=" border border-dark rounded p-1">{{(inversionArs / cotizacion).toFixed(2)}}</div>
+        <div class="col-md-4 text-center">                      
+            <div class=" border border-dark rounded p-1">
+                {{(inversionArs / (inversionArs * cotizacionOficial + (((inversionArs * cotizacionOficial) * impuestos)/100) )   )).toFixed(2)}}
+            </div>
             <div class="row">
                 <div class="col-12 text-secondary text-center">USD comprados con ese monto</div>-
             </div>
@@ -50,7 +52,9 @@
 
 
         <div class="col-md-4 text-center">
-            <div class=" border border-dark rounded p-1">{{(cotizacionBlue * (inversionArs / cotizacion)).toFixed(2)}}</div>
+            <div class=" border border-dark rounded p-1">
+                {{(cotizacionBlue * inversionArs).toFixed(2)}}
+            </div>
             <div class="row">
                 <div class="col-12 text-secondary text-center">Capital despues de la venta</div>
             </div>
@@ -65,7 +69,7 @@
                        Con un <em>dolar blue</em> cotizado en {{cotizacionBlue}} ARS, la ganancia será de:
                     </div>
                     <div class="card-body">
-                        {{( (diferenciaBlueSobreOficial * inversionArs)/100).toFixed(2) }} ARS
+                        {{ ((inversionArs * cotizacionBlue) - ((inversionArs * cotizacionOficial) + (((inversionArs * cotizacionOficial) * impuestos)/100) )  ).toFixed(2) }} ARS
                     </div>
                 </div>
             </div>
