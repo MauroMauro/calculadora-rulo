@@ -10,25 +10,32 @@ export class PanelPfComponent implements OnInit {
  
   inversionArs: number = 1000;
   plazo: number = 30;
-  tasaArs: number = 30;
+  tasaArs: number = 40;
 
-  cotizacionOficial: number = 80;
-  impuestos: number = 65;
-  cotizacion: number = this.cotizacionOficial + ((this.cotizacionOficial * this.impuestos)/100);
-  cotizacionBlue: number = 160;
-
-  //la "diferenciaBlueSobreOficial" refleja el porcentaje de ventaja del Blue sobre la "cotizacion"
-  diferenciaBlueSobreOficial:number = ((this.cotizacionBlue - this.cotizacion) * 100)/ this.cotizacionBlue;
-
+  cotizacionSolidario: number;
+  cotizacionBlue: number;
 
   constructor() { }
 
   ngOnInit(): void {
 
+    this.definirCotizaciones();
   }
 
-  mensaje(){
-    console.log('Mensaje de accion');
+  definirCotizaciones(){
+
+
+    fetch('https://criptoya.com/api/dolar')
+      .then(response => response.json())
+      .then(json => this.cotizacionBlue = json.blue )
+      .then(json => console.log('cotizacion blue: '+json))
+
+    fetch('https://criptoya.com/api/dolar')
+      .then(response => response.json())
+      .then(json => this.cotizacionSolidario = json.solidario )
+      .then(json => console.log('cotizacion solidario: '+json))
+
+
   }
 
 }

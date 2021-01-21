@@ -9,14 +9,14 @@ export class PanelRuloComponent implements OnInit {
 
 
   cotizacionOficial: number;
-  inversionUsd: number;
+  inversionUsd: number = 200;
   inversionArs: number;
-  impuestos: number;
+  impuestos: number = 65;
   cotizacion: number;
   cotizacionBlue: number;
+  cotizacionConImpuestos: number;
 
-  //la "diferenciaBlueSobreOficial" refleja el porcentaje de ventaja del Blue sobre la "cotizacion"
-  diferenciaBlueSobreOficial:number;
+  
 
   constructor() { }
 
@@ -25,7 +25,6 @@ export class PanelRuloComponent implements OnInit {
   ngOnInit(): void {
 
     this.definirCotizaciones();
-    this.definirMontos();
   }
 
   definirCotizaciones(){
@@ -37,32 +36,23 @@ export class PanelRuloComponent implements OnInit {
 
     fetch('https://criptoya.com/api/dolar')
       .then(response => response.json())
-      .then(json => this.inversionArs = (this.inversionUsd * json.oficial) )
+      .then(json => this.inversionArs = (this.inversionUsd * json.solidario) )
       .then(json => console.log('inversion ars: '+json))
 
     fetch('https://criptoya.com/api/dolar')
       .then(response => response.json())
       .then(json => this.cotizacionBlue = json.blue )
       .then(json => console.log('cotizacion blue: '+json))
+
+    fetch('https://criptoya.com/api/dolar')
+      .then(response => response.json())
+      .then(json => this.cotizacionConImpuestos = json.solidario )
+      .then(json => console.log('cotizacion solidario: '+json))
+
+
   }
   
 
-  definirMontos() {
-    
-    console.log("en definir montos, la cotizacion blue: " + this.cotizacionBlue);
-    console.log("en definir montos, la cotizacion oficial: " + this.cotizacionOficial);
-    console.log("en definir montos, los impuestos: " + this.impuestos);
-    this.inversionUsd = 200;
-    this.inversionArs = 0;
-    this.impuestos = 65;
-    //this.cotizacion = this.cotizacionOficial + ((this.cotizacionOficial * this.impuestos) / 100);
-    //console.log("cotizacion: " + this.cotizacion);
-    
-    //la "diferenciaBlueSobreOficial" refleja el porcentaje de ventaja del Blue sobre la "cotizacion"
-    //this.diferenciaBlueSobreOficial = ((this.cotizacionBlue - this.cotizacion) * 100) / this.cotizacionBlue;
-
-
-  }
 
   
 }
