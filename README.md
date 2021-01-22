@@ -33,7 +33,7 @@ _Angular_
 
 _HTML5 y CSS3_
 
-_JavaScript_
+_Typescript_
 
 _Bootstrap_
 
