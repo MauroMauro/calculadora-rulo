@@ -1,0 +1,107 @@
+<div class="container p-4 text-center">
+
+    <div class="titular text-light p-4">Inviertiendo pesos en un loop de dolares</div>
+
+    <div class="card border border-info rounded text-center text-info bg-transparent" data-toggle="modal"
+        data-target="#modal1">¿Qué es un loop de dolares?</div>
+
+
+    <div class="modal fade text-light" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content bg-dark ">
+                <div class="modal-body">
+                    <h5 class="modal-title" id="exampleModalLabel"><b>¿Qué es un loop de dolares?</b></h5>
+                    <p class="lead">
+                        Es aprovechar la diferencia entre la cotización del dolar paralelo y el dólar oficial.<br>
+                        El proceso es simple: se compran dólares al tipo de cambio oficial con pesos y luego se venden
+                        al valor del dólar paralelo. Con la ganancia obtenida se vuelve a realizar la operación.
+                    </p>
+
+                    <button type="button" class="btn btn-secondary float-none" data-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+
+
+        <div class="col-md-4 text-center pb-4">
+            <div class="input-ars md-4">
+                <input type="number" [(ngModel)]="inversionArs">
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-secondary text-center">Inversión ARS</div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4 text-center pb-4">
+            <div class="valores border border-warning rounded p-1">{{cotizacionOficial}}</div>
+            <div class="row">
+                <div class="col-12 text-secondary text-center">Cotización Dolar Oficial</div>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center pb-4">
+            <div class="valores border border-warning rounded p-1">{{impuestos}} %</div>
+            <div class="row">
+                <div class="col-12 text-secondary text-center">Impuestos</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4 text-center pb-4">
+            <div class="valores border border-warning rounded p-1">
+                {{(inversionArs /cotizacionConImpuestos).toFixed(2) }}
+            </div>
+            <div class="row">
+                <div class="col-12 text-secondary text-center">USD comprados con ese monto</div>-
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center pb-4">
+            <div class="valores border border-warning rounded p-1">{{cotizacionBlue}}</div>
+            <div class="row">
+                <div class="col-12 text-secondary text-center">Cotización Dolar Blue</div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 text-center pb-4">
+            <div class="valores border border-warning rounded p-1">
+                {{((inversionArs /cotizacionConImpuestos) * cotizacionBlue).toFixed(2)}}
+            </div>
+            <div class="row">
+                <div class="col-12 text-secondary text-center">Capital despues de la venta</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-4">
+        <div class="row">
+            <div class="col-md-12 p-4">
+                <div class="card text-center border border-warning rounded p-1 bg-dark text-light">
+                    <div class="card-header bg-principal">
+                        Con un <em>dolar blue</em> cotizado en {{cotizacionBlue}} ARS, la ganancia será de:
+                    </div>
+                    <div class="card-body display-4">
+                        {{ ((cotizacionBlue * (inversionArs /cotizacionConImpuestos)) - inversionArs ).toFixed(2) }}
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</div>

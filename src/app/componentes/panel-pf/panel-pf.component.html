@@ -1,0 +1,81 @@
+<div class="container p-4 text-center">
+
+    <div class="titular text-light p-4">Inviertiendo pesos en un plazo fijo</div>
+
+    <div class="row">
+
+        
+
+        <div class="col-md-4 text-center">
+            <input type="number" [(ngModel)]="inversionArs">
+            <div class="row">
+                <div class="col-12 text-secondary text-center">Inversión ARS</div>
+            </div>
+        </div> 
+
+        <div class="col-md-4 text-center">
+            <input type="number" [(ngModel)]="tasaArs">
+            <div class="row">
+                <div class="col-12 text-secondary text-center">Taza de interés anual ARS</div>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <div class="row">
+                <div class="col-12 text-secondary text-center">El cálculo es para un plazo de 30 días</div>
+            </div>
+        </div>
+
+       
+
+    </div>
+
+    <div class="container-fluid p-4">
+        <div class="row">
+            <div class="col-md-4 p-4">
+                <div class="card text-center border border-success rounded p-1 bg-dark text-light">
+                    <div class="card-header bg-principal">
+                        Capital total obtenido en un plazo de 30 días
+                    </div>
+                    <div class="card-body display-4">
+                        {{
+                            (((inversionArs*(tasaArs/12))/100) + inversionArs).toFixed(2)
+                        }} 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 p-4">
+                <div class="card text-center border border-success rounded p-1 bg-dark text-light">
+                    <div class="card-header bg-principal">
+                        Ganancia obtenida
+                    </div>
+                    <div class="card-body display-4">
+                        {{
+                            
+                            ((inversionArs*(tasaArs/12))/100).toFixed(2)
+                        }} 
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div class="col-md-4 p-4">
+                <div class="card text-center border border-success rounded p-1 bg-dark text-light">
+                    <div class="card-header bg-principal">
+                        Comparación de ganancia con Dollar Loop invirtiendo el mismo capital
+                    </div>
+                    <div class="card-body display-4">
+                        {{
+                            ((((inversionArs / cotizacionSolidario) * cotizacionBlue)) - inversionArs).toFixed(2)
+                        }} 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
