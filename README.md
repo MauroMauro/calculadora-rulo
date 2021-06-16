@@ -2,6 +2,9 @@
 
 La aplicación realiza el cálculo de márgen ganado después de una operacion de compra y venta de la divisa estadounidense aprovechando la diferencia en las cotizaciones de esa moneda en Argentina.
 
+Se puede ver en acción en:
+https://mauromauro.github.io/calculadora-rulo/
+
 Segmento: 
 📊 Finanzas
 
@@ -39,7 +42,8 @@ _Bootstrap_
 
 _API pública de data de cotizaciones de moneda_
 
-
+**Se puede ver en acción en:**
+https://mauromauro.github.io/calculadora-rulo/
 
 ## Autor ✒️
 
